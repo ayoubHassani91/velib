@@ -101,14 +101,19 @@
          </content>
       </TitledPane>
       <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Autres paramètres" GridPane.columnIndex="2" GridPane.rowIndex="1">
-         <content>
-            <RadioButton mnemonicParsing="false" onAction="#onSelectedMobile" text="Mobiles">
-               <toggleGroup>
-                  <ToggleGroup fx:id="otherParamGroup" />
-               </toggleGroup>
-            </RadioButton>
-         </content>
-      </TitledPane>
+    <content>
+        <VBox spacing="5.0">
+            <children>
+                <RadioButton mnemonicParsing="false" onAction="#onSelectedMobile" text="Mobiles">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="otherParamGroup" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="closedStationsRadio" mnemonicParsing="false" onAction="#onClosedStationsSelected" text="Fermées" toggleGroup="$otherParamGroup"/>
+            </children>
+        </VBox>
+    </content>
+</TitledPane>
       <TableView fx:id="dataTable" onKeyPressed="#onSelectedStation" onMouseClicked="#onSelectedStation" prefWidth="1000.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" GridPane.rowSpan="2147483647">
          <columns>
             <TableColumn fx:id="numberColumn" maxWidth="125.0" minWidth="100.0" prefWidth="125.0" text="Numéro" />
