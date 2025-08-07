@@ -352,4 +352,17 @@ public class MainController {
         this.longitudeText.setText(selectedStation.getCoordinates().getLitteralLongitude());
         this.latitudeText.setText(selectedStation.getCoordinates().getLitteralLatitude());
     }
+    @FXML
+    private void onClosedStationsSelected() {
+        List<Station> closedStations = stations.stream()
+            .filter(station -> !station.isInstalled()) // Change si ton getter est différent
+            .collect(Collectors.toList());
+
+        // Affichage console pour vérification
+        System.out.println("STATIONS FERMÉES :");
+        closedStations.forEach(s -> System.out.println(s.getName() + " | isInstalled = " + s.isInstalled()));
+
+        // Mise à jour de la table
+        dataTable.setItems(FXCollections.observableArrayList(closedStations));
+    }
 }

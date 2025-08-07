@@ -4,10 +4,10 @@ module fr.tamdaz.velib {
     requires javafx.fxml;
     requires org.json;
 
-    opens fr.tamdaz.velib to javafx.fxml;
-    opens fr.tamdaz.velib.controllers to javafx.fxml;
-    opens fr.tamdaz.velib.models to javafx.base;
+    opens fr.ahassani.velib to javafx.fxml;
+    opens fr.ahassani.velib.controllers to javafx.fxml;
+    opens fr.ahassani.velib.models to javafx.base;
     
-    exports fr.tamdaz.velib;
-    exports fr.tamdaz.velib.controllers;
+    exports fr.ahassani.velib;
+    exports fr.ahassani.velib.controllers;
 }
